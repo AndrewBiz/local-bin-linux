@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+echo "Tag information"
+cd $1
+export PATH=$HOME/.bin:$PATH
+echo $PATH
+ftls "$2"
+
+ftmtags -h
+#~/.bin/ftls
+#ftls $2 | ftmtags -f

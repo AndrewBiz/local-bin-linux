@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+echo "$@"
+echo
+# echo "*MWG:DateTimeOriginal    :" `exiftool -binary -short -quiet -MWG:DateTimeOriginal "$@" -v0`
+echo "EXIF:DateTimeOriginal    :" `exiftool -binary -short -quiet -EXIF:DateTimeOriginal "$@" -v0`
+echo "IPTC:DateCreated         :" `exiftool -binary -short -quiet -IPTC:DateCreated "$@" -v0`
+echo "IPTC:TimeCreated         :" `exiftool -binary -short -quiet -IPTC:TimeCreated "$@" -v0`
+echo "XMP:DateCreated          :" `exiftool -binary -short -quiet -XMP:DateCreated "$@" -v0`
+echo "**************************"
+echo
+# echo "*MWG:CreateDate          :" `exiftool -binary -short -quiet -MWG:CreateDate "$@" -v0`
+echo "EXIF:CreateDate          :" `exiftool -binary -short -quiet -EXIF:CreateDate "$@" -v0`
+echo "XMP:CreateDate           :" `exiftool -binary -short -quiet -XMP:CreateDate "$@" -v0`
+echo "IPTC:DigitalCreationDate :" `exiftool -binary -short -quiet -IPTC:DigitalCreationDate "$@" -v0`
+echo "IPTC:DigitalCreationTime :" `exiftool -binary -short -quiet -IPTC:DigitalCreationTime "$@" -v0`
+echo "**************************"
+echo
+echo "******* PLAIN TAGS *******"
+echo "DateTimeOriginal         :" `exiftool -binary -short -quiet -DateTimeOriginal "$@" -v0`
+echo "DateCreated              :" `exiftool -binary -short -quiet -DateCreated "$@" -v0`
+echo "TimeCreated              :" `exiftool -binary -short -quiet -TimeCreated "$@" -v0`
+echo "CreateDate               :" `exiftool -binary -short -quiet -CreateDate "$@" -v0`
+echo "DigitalCreationDate      :" `exiftool -binary -short -quiet -DigitalCreationDate "$@" -v0`
+echo "DigitalCreationTime      :" `exiftool -binary -short -quiet -DigitalCreationTime "$@" -v0`
+echo "FileModifyDate           :" `exiftool -binary -short -quiet -FileModifyDate "$@" -v0`
+echo "**************************"

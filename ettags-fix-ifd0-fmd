@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+exiftool -overwrite_original -exif:all= -tagsfromfile @ -exif:all -thumbnailimage -unsafe "$@"
+# exiftool  -exif:all= -tagsfromfile @ -exif:all -thumbnailimage -unsafe "$@"
+phls "$@" | phfixfmd

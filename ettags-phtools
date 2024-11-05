@@ -1,0 +1,73 @@
+#!/usr/bin/env bash
+echo "$@"
+echo
+# echo "MWG:City                :" `exiftool -binary -short -quiet -MWG:City "$@" -v0`
+# echo "  IPTC:City             :" `exiftool --composite -binary -short -quiet -IPTC:City "$@" -v0`
+# echo "  XMP:City              :" `exiftool --composite -binary -short -quiet -XMP:City "$@" -v0`
+# echo "  XMP:LocationShownCity :" `exiftool --composite -binary -short -quiet -XMP:LocationShownCity "$@" -v0`
+# echo "**************************"
+# echo
+# echo "  XMP:CollectionName :" `exiftool --composite -binary -short -quiet -XMP:CollectionName "$@" -v0`
+# echo "  XMP:CollectionURI  :" `exiftool --composite -binary -short -quiet -XMP:CollectionURI "$@" -v0`
+# echo "**************************"
+# echo
+# echo "MWG:Copyright          :" `exiftool -binary -short -quiet -MWG:Copyright "$@" -v0`
+# echo "  EXIF:Copyright       :" `exiftool --composite -binary -short -quiet -EXIF:Copyright "$@" -v0`
+# echo "  IPTC:CopyrightNotice :" `exiftool --composite -binary -short -quiet -IPTC:CopyrightNotice "$@" -v0`
+# echo "  XMP:Rights           :" `exiftool --composite -binary -short -quiet -XMP:Rights "$@" -v0`
+# echo "**************************"
+# echo
+# echo "MWG:Country                        :" `exiftool -binary -short -quiet -MWG:Country "$@" -v0`
+# echo "  IPTC:Country-PrimaryLocationName :" `exiftool --composite -binary -short -quiet -IPTC:Country-PrimaryLocationName "$@" -v0`
+# echo "  XMP:Country                      :" `exiftool --composite -binary -short -quiet -XMP:Country "$@" -v0`
+# echo "  XMP:LocationShownCountryName     :" `exiftool --composite -binary -short -quiet -XMP:LocationShownCountryName "$@" -v0`
+# echo "**************************"
+# echo
+echo "MWG:CreateDate             :" `exiftool -binary -short -quiet -MWG:CreateDate "$@" -v0`
+echo "  EXIF:CreateDate          :" `exiftool -binary -short -quiet -EXIF:CreateDate "$@" -v0`
+echo "  IPTC:DigitalCreationDate :" `exiftool -binary -short -quiet -IPTC:DigitalCreationDate "$@" -v0`
+echo "  IPTC:DigitalCreationTime :" `exiftool -binary -short -quiet -IPTC:DigitalCreationTime "$@" -v0`
+echo "  XMP:CreateDate           :" `exiftool -binary -short -quiet -XMP:CreateDate "$@" -v0`
+echo "**************************"
+echo
+# echo "MWG:Creator    :" `exiftool -binary -short -quiet -MWG:Creator "$@" -v0`
+# echo "  EXIF:Artist  :" `exiftool --composite -binary -short -quiet -EXIF:Artist "$@" -v0`
+# echo "  IPTC:By-line :" `exiftool --composite -binary -short -quiet -IPTC:By-line "$@" -v0`
+# echo "  XMP:Creator  :" `exiftool --composite -binary -short -quiet -XMP:Creator "$@" -v0`
+# echo "**************************"
+# echo
+echo "MWG:DateTimeOriginal    :" `exiftool -binary -short -quiet -MWG:DateTimeOriginal "$@" -v0`
+echo "  EXIF:DateTimeOriginal :" `exiftool -binary -short -quiet -EXIF:DateTimeOriginal "$@" -v0`
+echo "  IPTC:DateCreated      :" `exiftool -binary -short -quiet -IPTC:DateCreated "$@" -v0`
+echo "  IPTC:TimeCreated      :" `exiftool -binary -short -quiet -IPTC:TimeCreated "$@" -v0`
+echo "  XMP:DateCreated       :" `exiftool -binary -short -quiet -XMP:DateCreated "$@" -v0`
+echo "**************************"
+echo
+# # IPTC:Keywords, XMP:Subject
+# echo "MWG:Keywords    :" `exiftool -binary -short -quiet -MWG:Keywords "$@" -v0`
+# echo "  IPTC:Keywords :" `exiftool --composite -binary -short -quiet -IPTC:Keywords "$@" -v0`
+# echo "  XMP:Subject   :" `exiftool --composite -binary -short -quiet -XMP:Subject "$@" -v0`
+# echo "**************************"
+# echo
+# # IPTC:Sub-location, XMP:Location, XMP:LocationShownSublocation
+# echo "MWG:Location                   :" `exiftool -binary -short -quiet -MWG:Location "$@" -v0`
+# echo "  IPTC:Sub-location            :" `exiftool --composite -binary -short -quiet -IPTC:Sub-location "$@" -v0`
+# echo "  XMP:Location                 :" `exiftool --composite -binary -short -quiet -XMP:Location "$@" -v0`
+# echo "  XMP:LocationShownSublocation :" `exiftool --composite -binary -short -quiet -XMP:LocationShownSublocation "$@" -v0`
+# echo "**************************"
+# echo
+# # IPTC:Province-State, XMP:State, XMP:LocationShownProvinceState
+# echo "MWG:State                        :" `exiftool -binary -short -quiet -MWG:State "$@" -v0`
+# echo "  IPTC:Province-State            :" `exiftool --composite -binary -short -quiet -IPTC:Province-State "$@" -v0`
+# echo "  XMP:State                      :" `exiftool --composite -binary -short -quiet -XMP:State "$@" -v0`
+# echo "  XMP:LocationShownProvinceState :" `exiftool --composite -binary -short -quiet -XMP:LocationShownProvinceState "$@" -v0`
+# echo "**************************"
+# echo
+echo
+echo "******* MWG TAGS  *******"
+exiftool -short -sort -quiet -G -c "%d %d %.4f" -MWG:City -MWG:Copyright -NMG:Country -MWG:CreateDate -MWG:Creator -MWG:DateTimeOriginal -MWG:Keywords -MWG:Location -MWG:State "$@" -v0
+echo "**************************"
+
+echo "******* PLAIN TAGS (composite = false) *******"
+exiftool --composite -short -sort -quiet -G -c "%d %d %.4f" -City -LocationShownCity  -CollectionName -CollectionURI  -CodedCharacterSet  -Copyright -CopyrightNotice -Rights  -LocationShownCountryCode  -Country -Country-PrimaryLocationName -LocationShownCountryName  -CreateDate -DigitalCreationDate -DigitalCreationTime  -Artist -By-line -Creator  -DateTimeOriginal -DateCreated -TimeCreated -CreateDate -ImageUniqueID  -Keywords -Subject  -Sub-Location -Location -LocationShownSublocation  -Province-State -State -LocationShownProvinceState  -FileModifyDate  -LocationShownWorldRegion -GPSLatitude -GPSLatitudeRef -GPSLongitude -GPSLongitudeRef -GPSAltitude -GPSAltitudeRef "$@" -v0
+echo "**************************"

@@ -1,0 +1,8 @@
+# create slideshow from photos
+ffmpeg -framerate 1/5 -pattern_type \
+glob -i '*.JPG' -c:v libx264 -vf \
+"scale='min(1920,iw)':min'(1080,ih)':force_original_aspect_ratio=decrease,pad=1920:1080:-1:-1:color=black,fps=8,format=yuv420p" \
+-crf 20 slideshow.mp4
+
+# add music to slideshow
+ffmpeg -i slideshow.mp4 -i background-music.mp3 -c copy -map 0:v:0 -map 1:a:0 -shortest slideshow-with-music.mp4

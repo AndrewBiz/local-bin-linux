@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+for f in *.HEIC; do heif-convert -q 95 "$f" "$f.jpg"; done

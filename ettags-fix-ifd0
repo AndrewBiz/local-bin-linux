@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+exiftool -exif:all= -tagsfromfile @ -exif:all -thumbnailimage -unsafe "$@"
+# exiftool -overwrite_original -exif:all= -tagsfromfile @ -exif:all -thumbnailimage -unsafe "$@"

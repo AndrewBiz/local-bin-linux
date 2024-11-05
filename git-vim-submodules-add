@@ -1,0 +1,23 @@
+#!/bin/bash
+#git submodule add http://github.com/scrooloose/syntastic.git vim/bundle/syntastic
+#git submodule add http://github.com/scrooloose/nerdtree.git vim/bundle/nerdtree
+#git submodule add http://github.com/kien/ctrlp.vim.git vim/bundle/ctrlp.vim
+#git submodule add http://github.com/tpope/vim-repeat.git vim/bundle/vim-repeat
+#git submodule add http://github.com/kchmck/vim-coffee-script.git vim/bundle/vim-coffee-script
+#git submodule add http://github.com/pangloss/vim-javascript.git vim/bundle/vim-javascript
+#git submodule add http://github.com/henrik/vim-indexed-search.git vim/bundle/vim-indexed-search
+#git submodule add http://github.com/henrik/vim-reveal-in-finder.git vim/bundle/vim-reveal-in-finder
+#git submodule add http://github.com/vim-ruby/vim-ruby.git vim/bundle/vim-ruby
+#git submodule add http://github.com/tpope/vim-rails.git vim/bundle/vim-rails
+#git submodule add http://github.com/benmills/vimux.git vim/bundle/vimux
+#git submodule add http://github.com/tpope/vim-commentary.git vim/bundle/vim-commentary
+#git submodule add http://github.com/tpope/vim-git.git vim/bundle/vim-git
+#git submodule add http://github.com/tpope/vim-markdown.git vim/bundle/vim-markdown
+#git submodule add http://github.com/vim-scripts/file-line.git vim/bundle/file-line
+#git submodule add http://github.com/Lokaltog/vim-powerline.git vim/bundle/vim-powerline
+#git submodule add http://github.com/bronson/vim-trailing-whitespace.git vim/bundle/vim-trailing-whitespace
+#git submodule add http://github.com/vim-scripts/Railscasts-Theme-GUIand256color.git vim/bundle/Railscasts-Theme-GUIand256color
+#git submodule add http://github.com/ngmy/vim-rubocop.git vim/bundle/vim-rubocop
+# BAD!!! git submodule add http://github.com/henrik/vim-open-url.git vim/bundle/vim-open-url
+#git submodule add http://github.com/elixir-lang/vim-elixir.git vim/bundle/vim-elixir
+http://github.com/Lokaltog/vim-powerline.git vim/bundle/vim-powerline

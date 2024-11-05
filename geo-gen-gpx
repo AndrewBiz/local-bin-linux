@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+exiftool -if '$gpsdatetime' -fileOrder gpsdatetime -p ~/.bin/gpx.fmt -d %Y-%m-%dT%H:%M:%SZ "$@" > "./geotag/gen-from-pics.gpx"

@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# usage example: ph-rename-ios-mov 'IMG*.mov' anb
+phls "$1"|phrename -a "$2" -t CreationDate

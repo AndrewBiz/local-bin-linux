@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+exiftool -preserve -overwrite_original -geotag "./geotag/*.*" '-geotime<${DateTimeOriginal}+03:00' "$@"

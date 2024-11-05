@@ -1,0 +1,1 @@
+ln -s /Volumes/External/ios_backup ~/Library/Application\ Support/MobileSync/Backup

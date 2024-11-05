@@ -1,0 +1,10 @@
+# mass crop images
+for i in *JPG;do magick convert "$i" -gravity center -crop 16:9 +repage 16x9-"$i";done
+
+# mass resize (letterbox):
+for i in *JPG;do magick convert "$i" -resize 1920x1080 -background black -gravity center -extent 1920x1080 +repage 16x9-"$i";done
+
+# auto orient vertical photos
+mogrify -auto-orient image-name.JPG
+
+

@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+exiftool -sort -short -quiet -G -composite -c "%d %d %.4f" -All "$@" -v0 -progress
