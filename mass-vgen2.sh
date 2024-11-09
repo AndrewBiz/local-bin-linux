@@ -14,7 +14,7 @@ do
       seq=$(printf "%02d" $count)
       echo VGENing for "$dir" ...
       vgen -s "$dir/VIDEO-orig!!!" -t "$dir" -n vgen-$seq
-      echo vgen-$seq >> mvgen.sh
+      echo ./vgen-$seq.sh >> mvgen.sh
       count=$((count+1))
     else
       echo No dir VIDEO-orig!!! found. NO NEED TO convert files
